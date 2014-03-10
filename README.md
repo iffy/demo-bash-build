@@ -180,6 +180,8 @@ It's not a perfect solution and it has some warts compared to Grunt and gulp:
 
 4. It doesn't have watching built in (not sure it needs to be built in, though).
 
+5. It only workon on *nix systems.
+
 
 ## A note about Makefiles ##
 
