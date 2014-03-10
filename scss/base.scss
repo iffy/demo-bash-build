@@ -1,0 +1,40 @@
+$font-stack: Helvetica, sans-serif;
+$small-screen-width: 700px;
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+}
+
+body {
+    font-family: $font-stack;
+}
+
+p {
+    font-size: 2rem;
+    line-height: 2rem;
+}
+
+div.thing {
+    float: left;
+    width: 1024px;
+    @media screen and (max-width: $small-screen-width) {
+        float: none;
+        width: 100%;
+    }
+}
+
+
+div.thing {
+    .another {
+        .thing {
+            @include border-radius(10px);
+            .named {
+                .joe {
+                    color: #f00;
+                }
+            }
+        }
+        @extend p;
+        
+    }
+}

@@ -1,0 +1,20 @@
+body {
+  font-family: Helvetica, sans-serif; }
+
+p, div.thing .another {
+  font-size: 2rem;
+  line-height: 2rem; }
+
+div.thing {
+  float: left;
+  width: 1024px; }
+  @media screen and (max-width: 700px) {
+    div.thing {
+      float: none;
+      width: 100%; } }
+
+div.thing .another .thing {
+  -webkit-border-radius: 10px;
+  border-radius: 10px; }
+  div.thing .another .thing .named .joe {
+    color: #f00; }

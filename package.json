@@ -1,5 +1,6 @@
 {
   "devDependencies": {
-    "bower": "^1.2.8"
+    "bower": "^1.2.8",
+    "cssmin": "^0.4.1"
   }
 }

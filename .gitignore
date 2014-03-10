@@ -2,3 +2,5 @@ groups.json
 bower_components/
 node_modules
 .sass-cache
+production
+css
