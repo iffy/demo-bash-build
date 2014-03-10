@@ -1,0 +1,19 @@
+{
+  "name": "sass",
+  "version": "0.0.0",
+  "authors": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.0",
+    "angular-ui-router": "~0.2.9",
+    "angular-animate": "~1.2.14",
+    "angular": "~1.2.14"
+  }
+}
