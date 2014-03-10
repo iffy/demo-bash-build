@@ -5,7 +5,7 @@ This repo has grown out of frustrations encountered with web asset build systems
 The meat is in [build.sh](build.sh) which, when run like this:
 
 ```
-./build.sh
+./build.sh all
 ```
 
 should:
@@ -14,6 +14,12 @@ should:
 2. Install/update bower components
 3. SCSS -> minified CSS
 4. JS* -> concatenated, minified JS
+
+```
+./build.sh
+```
+
+will do just the last 2.
 
 # The Story #
 

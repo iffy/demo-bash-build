@@ -136,7 +136,7 @@ function do_js() {
     tmp_cat=".tmp/js.cat"
     mkdir -p $tmp_ngmin    
     for groupfile in $(ls .tmp/groups/); do
-        
+
         # read the scripts that need to be combined
         groupfile=".tmp/groups/$groupfile"
         # hard-coded to single group for now
@@ -165,15 +165,22 @@ function do_js() {
     done
 }
 
-function do_all() {
+function do_install() {
     do_npm
     do_bower
-    do_scss
+}
+
+function do_dev() {
     do_css
     do_js
 }
 
+function do_all() {
+    do_install
+    do_dev
+}
+
 PATH=$(pwd)/node_modules/.bin:${PATH}
 
-CMD=${1:-all}
+CMD=${1:-dev}
 do_$CMD
