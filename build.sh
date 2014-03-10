@@ -3,6 +3,11 @@
 #------------------------------------------------------------------------------
 # boilerplate
 #------------------------------------------------------------------------------
+BUILDSCRIPT="$0"
+if [ ! -z "$IGNORE_BUILDSCRIPT" ]; then
+    BUILDSCRIPT=""
+fi 
+
 
 function mtime() {
     FILES=$1
@@ -35,7 +40,7 @@ function maxmtime() {
 }
 
 function outofdate() {
-    INPUT_FILES=$1
+    INPUT_FILES="$1 $BUILDSCRIPT"
     OUTPUT_FILES=$2
 
     IN_MAX=$(maxmtime "$INPUT_FILES")
@@ -68,6 +73,13 @@ function sansext() {
 #------------------------------------------------------------------------------
 # app specific
 #------------------------------------------------------------------------------
+
+function do_clean() {
+    rm -r node_modules
+    rm -r bower_components
+    rm -r .tmp
+    rm -r production
+}
 
 function do_npm() {
     if $(outofdate package.json node_modules); then
