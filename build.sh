@@ -119,6 +119,7 @@ function do_html() {
     for htmlfile in $(ls *.html); do
         group_filename=".tmp/groups/${htmlfile}.json"
         output_html="production/${htmlfile}"
+
         if $(outofdate "minsrc.py $htmlfile" "$output_html $group_filename"); then
             echo "-> $output_html"
             echo "-> $group_filename"
@@ -135,6 +136,8 @@ function do_js() {
     tmp_cat=".tmp/js.cat"
     mkdir -p $tmp_ngmin    
     for groupfile in $(ls .tmp/groups/); do
+        
+        # read the scripts that need to be combined
         groupfile=".tmp/groups/$groupfile"
         # hard-coded to single group for now
         src_files=$(python rjson.py $groupfile 'x[0]["inputs"]')
